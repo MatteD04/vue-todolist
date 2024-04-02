@@ -1,5 +1,46 @@
+/*RESET*/
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+/*GENERAL*/
+.text-cent{
+    text-align: center;
+}
+
+/*HEADER*/
+.logo img{
+    width: 300px;
+    padding: 20px 0;
+}
+
+/*MAIN*/
+.new-input input, button{
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+.new-input button{
+    cursor: pointer;
+}
+
+.user-list{
+    background-color: rgb(232, 232, 232);
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 35px;
+}
+.task{
+    padding: 10px 6px 6px 6px;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.task i{
+    cursor: pointer;
 }
