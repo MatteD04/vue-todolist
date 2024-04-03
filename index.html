@@ -10,26 +10,28 @@
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-    <header>
-        <div class="logo text-cent">
-            <img src="img/logo.png" alt="logo">
-        </div>
-    </header>
-
-    <main>
-
-        <section class="text-cent new-input">
-            <input type="text" placeholder="Nuova task">
-            <button>Aggiungi</button>
-        </section>
-
-        <section class="user-list">
-            <div v-for="singleTask in tasks" class="task">
-                <div>{{singleTask.text}}</div>
-                <div @click="deleteTask"><i class="fa-solid fa-xmark"></i></div>
+    <div id="app">
+        <header>
+            <div class="logo text-cent">
+                <img src="img/logo.png" alt="logo">
             </div>
-        </section>
-    </main>
+        </header>
+    
+        <main>
+    
+            <section class="text-cent new-input">
+                <input type="text" placeholder="Nuova task" v-model="newTodo">
+                <button @click="addTask">Aggiungi</button>
+            </section>
+    
+            <section class="user-list">
+                <div v-for="singleTask, index in tasks" class="task">
+                    <div :class="{'done': singleTask.done}">{{singleTask.text}}</div>
+                    <div @click="deleteTask(index)"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>

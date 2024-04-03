@@ -9,6 +9,9 @@
 .text-cent{
     text-align: center;
 }
+.done{
+    text-decoration: line-through;
+}
 
 /*HEADER*/
 .logo img{

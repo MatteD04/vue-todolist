@@ -10,27 +10,30 @@ createApp ({
             tasks : [
                 {
                     text: 'fare i compiti',
-                    done: 'false',
+                    done: false
                 }, {
                     text:'fare la spesa',
-                    done:'false',
+                    done: false
                 }, {
                     text:'chiamare commercialista',
-                    done:'true',
-                }
-            ]
-        }
+                    done: true
+                },
+            ],
+            newTodo: ''
+        };
     },
     methods: {
         deleteTask(indexOf) {
             this.tasks.splice(indexOf,1);
         },
         addTask() {
-            let inputText = document.getElementById('new-task').value;
-            if(inputText != ""){
-                this.tasks.push({text:inputText,completed:false});
-                document.getElementById('new-task').value ="";
-            }
-        }
+            const inputText = {
+                text: this.newTodo,
+                done: false
+            };
+            this.tasks.unshift(inputText);
+
+            this.newTodo= '';
+        },
     }
 }).mount('#app');
